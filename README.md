@@ -37,7 +37,7 @@ Test notebook with simple Spark Scala code.
 sc.parallelize(1 to 100).
   filter(x => x % 2 == 0).
   map(x => x * x).
-  take(3)
+  take(10)
 ```
 
 Use tab for auto-complete.
@@ -82,51 +82,7 @@ This is a likely source of dependency errors.
 
 ## Test CSV library
 
-```scala
-// Grab URL contents
-def getUrl(url:String):String = 
-  scala.io.Source.fromURL(url).mkString
-
-// Write file
-def fileWrite(path:String,contents:String) = {
-  import java.io.{PrintWriter,File}
-  val writer = new PrintWriter(new File(path))
-  writer.write(contents)
-  writer.close
-}
-
-val symbol = "AAPL"
-val baseUrl = "http://real-chart.finance.yahoo.com"
-val url = s"${baseUrl}/table.csv?s=${symbol}&g=d&ignore=.csv"
-val csv = getUrl(url)
-val csvFile = s"${symbol}.csv"
-fileWrite(csvFile, csv)
-
-val stockRdd = sc.textFile(csvFile).
-  filter(line => line matches ".*\\d.*").
-  map(line => line.split(",")).
-  map(fields => (fields(6).toDouble,fields(0))).
-  sortBy({case (close,date) => close},false)
-
-stockRdd.take(5).foreach(println)
-
-import org.apache.spark.sql.SQLContext
-
-// Load table.
-val df = sqlContext.read.
-    format("com.databricks.spark.csv").
-    option("header", "true").
-    option("inferSchema", "true").
-    load("AAPL.csv")
-
-// Explore the table.
-df.show
-df.registerTempTable("aapl")
-sqlContext.sql("SELECT COUNT(1) FROM aapl").show
-sqlContext.sql("SELECT MAX(`Adj Close`) FROM aapl").show
-sqlContext.sql("SELECT Date,`Adj Close` FROM aapl 
-  ORDER BY `Adj Close` DESC LIMIT 5").show
-```
+Now go to the notebook [Demo.ipynb](Demo.ipynb) and test code there.
 
 # Misc
 
@@ -150,8 +106,3 @@ How can I create a slide show from a notebook?
 - Click on *View > Cell Toolbar > Slideshow*
 - `jupyter nbconvert notebook.ipynb --to slides --post serve`
 - Open browser at <http://localhost:8000>
-
-
-
-
-
