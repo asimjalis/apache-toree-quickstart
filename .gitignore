@@ -2,3 +2,4 @@ metastore_db
 derby.log
 .ipynb_checkpoints
 *.csv
+tmp*
