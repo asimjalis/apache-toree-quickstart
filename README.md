@@ -14,7 +14,7 @@ Define `SPARK_HOME`.
 
     SPARK_HOME=$HOME/Downloads/spark-1.6.0-bin-hadoop2.6
 
-Install Toree. 
+Configure Toree. 
 
     jupyter toree install \
       --spark_home=$SPARK_HOME
@@ -58,7 +58,7 @@ Define `SPARK_OPTS` and `SPARK_HOME`.
     SPARK_OPTS="--packages=$SPARK_PKGS"
     SPARK_HOME=$HOME/Downloads/spark-1.6.0-bin-hadoop2.6
 
-Install Toree with these packages.
+Configure Toree to use these packages.
 
     jupyter toree install \
       --spark_home=$SPARK_HOME \
