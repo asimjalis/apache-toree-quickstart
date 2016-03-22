@@ -1,8 +1,34 @@
 # Apache Toree Quickstart
 
-## Install
+## Presentation
+
+Presentation accompanying this tutorial:
+
+<http://www.slideshare.net/asimjalis/apache-toree>
+
+## Preamble
+
+All of the following commands should be executed in a new terminal
+window. You do not need to modify your `.profile` or `.bashrc` or any
+other configuration file.
+
+## Install Spark
 
 Install Spark from <http://spark.apache.org/downloads.html>.
+
+Make sure you download the pre-built *binaries* for Hadoop 2.6 and
+later, and not the sources. (By default the download link will point
+to the sources and not the binaries.)
+
+## Install Pip, Jupyter, Toree
+
+Install pip if you don't already have it installed.
+
+    sudo easy_install pip
+
+If you already have pip then make sure it is updated.
+
+    sudo pip install --upgrade pip
 
 Install Jupyter and Toree.
 
@@ -12,9 +38,11 @@ Install Jupyter and Toree.
 
 ## Configure
 
-Define `SPARK_HOME`.
+Set `SPARK_HOME` to point to the directory where you downloaded and
+expanded the Spark binaries. Instead of 1.6.1 you might have a
+different version number.
 
-    SPARK_HOME=$HOME/Downloads/spark-1.6.0-bin-hadoop2.6
+    SPARK_HOME=$HOME/Downloads/spark-1.6.1-bin-hadoop2.6
 
 Configure Toree. 
 
