@@ -2,6 +2,8 @@
 
 ## Install
 
+Install Spark from <http://spark.apache.org/downloads.html>.
+
 Install Jupyter and Toree.
 
     sudo pip install --upgrade pip
