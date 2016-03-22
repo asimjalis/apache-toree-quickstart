@@ -3,3 +3,4 @@ derby.log
 .ipynb_checkpoints
 *.csv
 tmp*
+*.slides.html

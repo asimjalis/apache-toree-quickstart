@@ -84,7 +84,7 @@ This is a likely source of dependency errors.
 
 Now go to the notebook [Demo.ipynb](Demo.ipynb) and test code there.
 
-# Misc
+# Going Public
 
 ## Publishing GitHub Notebooks
 
@@ -104,5 +104,13 @@ How can I create a slide show from a notebook?
 
 - Create a Toree notebook
 - Click on *View > Cell Toolbar > Slideshow*
-- `jupyter nbconvert notebook.ipynb --to slides --post serve`
+- `jupyter nbconvert NOTEBOOK.ipynb --to slides --post serve`
 - Open browser at <http://localhost:8000>
+
+## Slide Show Demo
+
+To view the slides demo:
+
+    jupyter nbconvert Slides-Demo.ipynb --to slides --post serve
+
+Open browser at <http://localhost:8000>.
