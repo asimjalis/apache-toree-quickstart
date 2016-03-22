@@ -2,7 +2,13 @@
 
 ## Install
 
-Install Spark from <http://spark.apache.org/downloads.html>.
+Install Spark binary from <http://spark.apache.org/downloads.html>.
+
+![image](assets/apachesparkpackagetype.png)
+
+Install Pip
+
+	sudo easy_install pip
 
 Install Jupyter and Toree.
 
@@ -12,7 +18,7 @@ Install Jupyter and Toree.
 
 ## Configure
 
-Define `SPARK_HOME`.
+In your terminal window, define `SPARK_HOME` by pasting in the appropriate version and path to access Spark. 
 
     SPARK_HOME=$HOME/Downloads/spark-1.6.0-bin-hadoop2.6
 
