@@ -32,7 +32,6 @@ If you already have pip then make sure it is updated.
 
 Install Jupyter and Toree.
 
-    sudo pip install --upgrade pip
     sudo pip install jupyter
     sudo pip install toree
 
