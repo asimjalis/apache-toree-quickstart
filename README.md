@@ -121,11 +121,12 @@ How can I share my notebook with other people?
 
 - Go to <https://gist.github.com>
 - Create gist with extension `.ipynb`
-- Paste your notebook here.
-- Copy the Gist ID.
+- Copy notebook to clipboard: `cat NOTEBOOK.ipynb | pbcopy`
+- Paste clipboard into the gist you just created
+- Copy the Gist ID
 - Go to <http://nbviewer.jupyter.org>
-- Paste the Gist ID here.
-- Share the link NBViewer gives you.
+- Paste the Gist ID here
+- Share the link NBViewer gives you
 
 ## Creating Slide Shows
 
